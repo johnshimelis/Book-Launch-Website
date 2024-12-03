@@ -1,0 +1,223 @@
+/* General Styles */
+.availability-container {
+  background-color: rgba(0, 0, 0, 0.9);
+  padding-top: 10px;
+  text-align: center;
+  width: 100%; /* Ensures the container stretches to full width */
+  box-sizing: border-box; /* Prevents padding from affecting overall width */
+}
+
+#availability p {
+  padding-bottom: 0px;
+  font-size: 3.5rem; 
+    line-height: 5.6rem;
+  font-weight: bold;
+  color: rgba(249, 199, 79);
+  font-family: Polygon;
+  font-style: normal;
+  margin: 20px 0;
+  flex-grow: 1; /* Allows the text to grow and take available space */
+}
+
+/* Flexbox for retailer links */
+#availability .retailer-links {
+  display: flex;
+  flex-wrap: wrap; /* Items will wrap on smaller screens */
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  list-style: none;
+  padding: 0;
+  width: 100%;
+}
+
+.retailer-links li {
+  display: flex;
+  justify-content: center;
+}
+
+.retailer-links #bookstore {
+  max-width: 50%;
+ }
+
+.retailer-links a img {
+  padding-bottom: 60px;
+  max-width: 60%;
+ 
+  height: auto;
+  margin: 0 auto;
+  width: 500px; /* Default size */
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Link Styling */
+.retailer-links a {
+  color: #ffdd99;
+  text-decoration: none;
+  transition: color 0.3s ease, text-decoration 0.3s ease;
+}
+
+.retailer-links a:hover {
+  text-decoration: underline;
+  color: #ffffff;
+}
+
+/* Mobile - Small Screens */
+@media (max-width: 480px) {
+  #availability .retailer-links li  p {
+    font-size: 15px;
+    margin-left: -240px;
+    margin-top: 100px;
+    }
+  #availability .retailer-links #bookstore{
+    margin-top: 30px; 
+    
+  }
+  #availability p {
+    font-size: 2.9rem;
+    line-height: 4.5rem;
+  }
+  .availability-container p {
+    font-size: 1.3rem;
+    margin: 10px 0;
+  }
+
+  #availability .retailer-links {
+    flex-direction: column; /* Stack items vertically */
+    gap: 20px;
+  }
+
+  #availability .retailer-links li a img {
+    margin-left: -40px;
+    width: 170px; /* Make logos smaller on small screens */
+  }
+}
+
+/* Small Screens (481px to 768px) */
+@media (min-width: 481px) and (max-width: 768px) {
+  .availability-container p {
+    font-size: 1.5rem;
+    margin: 15px 0;
+  }
+
+  #availability .retailer-links {
+    flex-direction: row; /* Keep items in a row */
+    justify-content: center;
+    gap: 25px; /* Moderate spacing */
+  }
+
+  .retailer-links li a img {
+    width: 180px; /* Adjust logo size for small tablets */
+    margin-left: -30px;
+  }
+}
+
+/* Medium Screens (769px to 1199px) */
+@media (min-width: 769px) and (max-width: 1199px) {
+  #availability .retailer-links li  p {
+    font-size: 20px;
+    margin-left: -340px;
+    margin-top: 250px;
+    }
+  #availability .retailer-links #bookstore{
+    margin-top: 30px;
+    
+  }
+  .availability-container p {
+    font-size: 1.4rem;
+    margin: 20px auto;
+  }
+
+  .retailer-links {
+    flex-direction: row;
+    gap: 30px; /* Increased space on medium screens */
+  }
+
+  .retailer-links li a img {
+    width: 400px; /* Adjust logo size for medium screens */
+  }
+}
+
+/* Large Screens (1200px and above) */
+@media (min-width: 1200px) {
+  .availability-container p {
+    font-size: 1.5rem;
+    margin: 0px auto;
+    margin-bottom: 200px;
+  }
+  #availability .retailer-links li  p {
+    font-size: 15px;
+    color: #fff;
+    margin-left: -220px;
+    margin-top: 80px;
+    }
+  #availability .retailer-links #bookstore{
+    margin-top: 20px;
+    
+  }
+
+  #availability .retailer-links {
+    gap: 50px; /* Default gap for large screens */
+    /* Increase the gap gradually as screen width increases */
+  }
+
+  .retailer-links li a img {
+   
+    width: 220px; /* Keep the logos the same size */
+  }
+}
+
+/* For extremely large screens (greater than 1500px) */
+@media (min-width: 1500px) {
+  
+  #availability .retailer-links li  p {
+
+    font-size: 15px;
+    margin-left: -220px;
+  }
+  #availability .retailer-links {
+    gap: 60px; /* Increase the gap further for very large screens */
+  }
+  .retailer-links li a img {
+   
+    width: 220px; /* Keep the logos the same size */
+  }
+}
+@media (min-width: 2000px) {
+  #availability .retailer-links {
+    gap: 200px; /* Increase the gap further for very large screens */
+  }
+  .retailer-links li a img {
+   
+    width: 220px; /* Keep the logos the same size */
+  }
+}
+@media (min-width: 2500px) {
+  #availability .retailer-links {
+    gap: 250px; /* Increase the gap further for very large screens */
+  }
+  .retailer-links li a img {
+   
+    width: 220px; /* Keep the logos the same size */
+  }
+}
+
+@media (min-width: 3500px) {
+  #availability .retailer-links {
+    gap: 300px; /* Increase the gap further for very large screens */
+  }
+  .retailer-links li a img {
+   
+    width: 220px; /* Keep the logos the same size */
+  }
+}
+@media (min-width: 4000px) {
+  #availability .retailer-links {
+    gap: 400px; /* Increase the gap further for very large screens */
+  }
+  .retailer-links li a img {
+   
+    width: 220px; /* Keep the logos the same size */
+  }
+}
+

@@ -1,0 +1,103 @@
+#testimonials{
+    background-color: rgba(0, 0, 0, 0.2);
+}
+.testimonials {
+    padding: 4rem 10%;
+    
+    color: #f7c508;
+    text-align: center;
+    font-family: polygon;
+}
+
+.testimonials h2 {
+    font-size: 2.5rem;
+    color: #f7c508;
+    margin-bottom: 2rem;
+    font-family: polygon;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+}
+
+.testimonial-carousel {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.testimonial-slide {
+    display: none;
+    padding: 1.5rem;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    color: #ddd;
+    font-style: italic;
+}
+
+.testimonial-slide.active {
+    display: block;
+}
+
+.testimonial-quote {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+.testimonial-author {
+    font-weight: bold;
+    font-size: 1rem;
+    color: #f7c508;
+}
+
+.carousel-controls {
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+}
+
+.carousel-controls button {
+    background: none;
+    border: none;
+    color: #f7c508;
+    font-size: 2rem;
+    cursor: pointer;
+    padding: 0 1rem;
+}
+
+.carousel-controls button:hover {
+    color: #fff;
+}
+
+/* Responsive Design for Testimonials */
+@media (max-width: 768px) {
+    .testimonials h2 {
+        font-size: 2rem;
+    }
+
+    .testimonial-quote {
+        font-size: 1rem;
+    }
+
+    .testimonial-author {
+        font-size: 0.9rem;
+    }
+
+    .carousel-controls button {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .testimonials h2 {
+        font-size: 1.8rem;
+    }
+
+    .testimonial-quote {
+        font-size: 0.9rem;
+    }
+    
+    .testimonial-author {
+        font-size: 0.8rem;
+    }
+}

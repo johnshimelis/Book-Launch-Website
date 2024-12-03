@@ -1,0 +1,383 @@
+/* Base Styles */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  background-color: #f9f9f9;
+}
+
+.whyunselling {
+  padding: 2rem 1rem;
+  background-color: rgba(0, 0, 0, 0.6);
+  color: #fff;
+}
+
+#whyunselling .container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem; /* Default gap */
+  max-width: 100%;
+  margin: 0 auto;
+  width: 100%; /* Allow full width */
+}
+
+/* Image Section */
+.why-banner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.responsive-image {
+  max-width: 100%; /* Image is fully responsive */
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+  transition: max-width 0.3s ease, margin-right 0.3s ease; /* Smooth transition */
+}
+
+/* Content Section */
+.why-content {
+  text-align: center;
+  
+  width: 100%;
+  max-width: 900px; /* Keep max width to avoid stretching too far */
+  margin: 0 auto;
+  padding: 2rem;
+  border-radius: 8px;
+}
+
+/* Typography */
+#why-content .section-title {
+  font-size: 3.5rem; 
+    line-height: 5.6rem;
+  
+  font-weight: bold;
+  margin-bottom: 1rem;
+  padding: 0rem;
+  font-family: polygon;
+  color: #f7c508;
+}
+
+#why-content .section-texts {
+  text-align: justify;
+  font-size: 1.8rem; /* Proportionate increase */
+  font-style: normal;
+  color: fff;
+  font-family: polygon sans-serif;
+}
+@media (min-width: 480px) {
+  .why-banner .responsive-image {
+    max-width: 200px; /* Image increases in size on tablets */
+  }
+  #why-content .section-title {
+    font-size: 2rem; /* Slightly smaller for small screens */
+    font-style: normal;
+    font-family: polygon;
+    text-transform: capitalize;
+    color: rgba(249, 199, 79);
+  }
+  #why-content .section-texts {
+    text-align: justify;
+    font-size: 1.8rem; /* Proportionate increase */
+    font-style: normal;
+    color: fff;
+    font-family: polygon sans-serif;
+  }
+}
+
+@media (max-width: 480px) {
+  .responsive-image {
+    max-width: 180px; /* Adjust image size */
+  }
+  #why-content .section-title {
+    font-size: 2.9rem; /* Decrease title size for smaller devices */
+    font-style: normal;
+    line-height: 3rem;
+    font-family: polygon;
+    text-transform: capitalize;
+    color: rgba(249, 199, 79);
+    padding-bottom: 10px;
+  }
+  #why-content .section-texts {
+    hyphens: auto;
+    text-align: justify; /* Justifies the text */
+    text-justify: inter-word; /* Reduces uneven spacing */
+    font-size: 1.8rem; /* Proportionate increase */
+    font-style: normal;
+    color: #fff; /* Fixed invalid color syntax */
+    font-family: polygon sans-serif;
+    word-spacing: 0rem; /* Optional: Adjust word spacing */
+    line-height: 1.5; /* Improves readability */
+}
+
+}
+
+/* Medium Screens (Tablets and Up) */
+@media (min-width: 768px) {
+  #whyunselling .container {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 2rem;
+  }
+
+  .why-banner {
+    justify-content: flex-end;
+    width: 48%; /* Slightly smaller on tablets */
+    margin-right: 1rem;
+  }
+
+  .why-content {
+    text-align: left;
+    width: 100%;
+    padding: 0 1rem;
+    margin-left: 1rem;
+  }
+
+  .why-banner .responsive-image {
+    max-width: 250px; /* Image increases in size on tablets */
+    margin-top: 120px;
+  }
+
+  .why-content .section-title {
+    font-size: 2.2rem; /* Balanced for medium screens */
+    font-style: normal;
+    font-family: polygon;
+    text-transform: capitalize;
+    color: rgba(249, 199, 79);
+  }
+
+  #why-content .section-texts {
+    text-align: justify;
+    font-size: 1.8rem; /* Proportionate increase */
+    font-style: normal;
+    color: fff;
+    font-family: polygon sans-serif;
+  }
+}
+
+/* Large Screens (Desktops and Up) */
+@media (min-width: 1024px) {
+  #whyunselling .container {
+    gap: 3rem; /* Increased gap for larger screens */
+  }
+
+  .why-banner {
+    margin-right: 2rem;
+    margin-left: -0.5rem;
+  }
+
+  .why-content {
+    padding: 3rem;
+    width: 100%;
+    max-width: 900px;
+    margin-left: 1rem;
+  }
+
+  .why-banner .responsive-image {
+    max-width: 290px; /* Image increases slightly */
+    margin-top: 200px;
+  }
+
+  #why-content .section-title {
+    font-size: 3.5rem; 
+    line-height: 5.6rem;
+    font-style: normal;
+    font-family: polygon;
+    text-transform: capitalize;
+    color: rgba(249, 199, 79);
+  }
+
+  #why-content .section-texts {
+    text-align: justify;
+    font-size: 1.8rem; /* Proportionate increase */
+    font-style: normal;
+    color: fff;
+    font-family: polygon sans-serif;
+  }
+}
+
+/* Very Large Screens (1300px and Up) */
+@media (min-width: 1300px) {
+  #whyunselling .container {
+    gap: 4rem; /* Increased gap as the screen size grows */
+  }
+
+  .why-banner .responsive-image {
+    margin-top: 150px;
+    max-width: 300px; /* Slight increase in image size */
+  }
+
+  .why-banner {
+    margin-right: 1.5rem;
+    margin-left: -1rem;
+  }
+
+  .why-content {
+    padding: 4rem;
+    width: 100%;
+    max-width: 900px;
+    margin-left: 2rem;
+  }
+
+  #why-content .section-title {
+    font-size: 3.5rem; 
+    line-height: 5.6rem;
+    font-style: normal;
+    font-family: polygon;
+    text-transform: capitalize;
+    color: rgba(249, 199, 79);
+  }
+
+  #why-content .section-texts {
+    text-align: justify;
+    font-size: 1.8rem; /* Proportionate increase */
+    font-style: normal;
+    color: fff;
+    font-family: polygon sans-serif;
+  }
+}
+
+@media (min-width: 1600px) {
+
+  #whyunselling .container {
+    margin-left: -150px;
+    gap: 10rem; /* Further increase gap for large screens */
+  }
+  .why-banner .responsive-image {
+    margin-top: 200px;
+    max-width: 300px; /* Slight increase in image size */
+  }
+  #why-content .section-title {
+    font-size: 3rem; /* Bigger and bold for 4K screens */
+    font-style: normal;
+    font-family: polygon;
+    text-transform: capitalize;
+    color: rgba(249, 199, 79);
+  }
+
+  #why-content .section-texts {
+    text-align: justify;
+    font-size: 1.8rem; /* Proportionate increase */
+    font-style: normal;
+    color: fff;
+    font-family: polygon sans-serif;
+  }
+}
+
+
+
+/* Ultra-Wide Screens (1920px and Up) */
+@media (min-width: 1920px) {
+  #whyunselling .container {
+    margin-left: -200px;
+    gap: 25rem; /* Further increase gap for large screens */
+  }
+
+  .responsive-image {
+    max-width: 400px; /* Increase image size */
+  }
+
+  .why-banner {
+    margin-right: 2rem;
+    margin-left: -1rem;
+  }
+
+  .why-content {
+    padding: 4rem;
+    width: 100%;
+    max-width: 900px;
+    margin-left: 2rem;
+  }
+
+  #why-content .section-title {
+    font-size: 3.5rem; 
+    line-height: 5.6rem;
+    font-style: normal;
+    font-family: polygon;
+    text-transform: capitalize;
+    color: rgba(249, 199, 79);
+  }
+
+  #why-content .section-texts {
+    text-align: justify;
+    font-size: 1.8rem; /* Proportionate increase */
+    font-style: normal;
+    color: fff;
+    font-family: polygon sans-serif;
+  }
+}
+
+@media (min-width:2560px){
+  #whyunselling .container {
+    margin-left: -450px;
+    gap: 45rem; /* Large gap for 4K screens */
+  }
+  .responsive-image {
+    max-width: 500px; /* Larger image on 4K screens */
+  }
+
+  .why-banner {
+    margin-right: 2.5rem;
+    margin-left: -1rem;
+  }
+
+  .why-content {
+    width: 100%;
+    max-width: 900px;
+    margin-left: 4rem;
+  }
+
+  #why-content .section-title {
+    font-size: 4rem; /* Bold emphasis for ultra-large screens */
+    font-style: normal;
+    font-family: polygon;
+    text-transform: capitalize;
+  }
+
+  #why-content .section-texts {
+    text-align: justify;
+    font-size: 1.8rem; /* Proportionate increase */
+    font-style: normal;
+    color: fff;
+    font-family: polygon sans-serif;
+  }
+}
+
+/* 4K Screens (3840px and Up) */
+@media (min-width: 3840px) {
+  #whyunselling .container {
+    gap: 60rem; /* Large gap for 4K screens */
+  }
+
+  .responsive-image {
+    max-width: 550px; /* Larger image on 4K screens */
+  }
+
+  .why-banner {
+    margin-right: 2.5rem;
+    margin-left: -1rem;
+  }
+
+  .why-content {
+    width: 100%;
+    max-width: 900px;
+    margin-left: 4rem;
+  }
+
+  #why-content .section-title {
+    font-size: 4rem; /* Bold emphasis for ultra-large screens */
+    font-style: normal;
+    font-family: polygon;
+    text-transform: capitalize;
+  }
+  #why-content .section-texts {
+    text-align: justify;
+    font-size: 1.8rem; /* Proportionate increase */
+    font-style: normal;
+    color: fff;
+    font-family: polygon sans-serif;
+  }
+}

@@ -1,0 +1,130 @@
+
+#author{
+  background-color: rgba(0,0,0,0.2);
+}
+.author .container {
+  display: grid;
+  gap: 20px;
+}
+
+.author :is(.section-subtitle, .section-title) { text-align: left; }
+#author img{
+  width: 100%;
+  border-radius: 20px;
+  height: auto
+ }
+#author .img-holder{
+  background-color: black;
+}
+
+.author-content {
+background-color: rgba(0,0,0,0.6);
+  padding: 60px;
+}
+#author-content .section-title{
+  color: #FFB400;
+  text-align: center;
+  font-family: polygon;
+}
+#author-content .section-text{
+  color: #fff;
+ font-size: 1.2em;
+  font-family: polygon;
+}
+#author-content{
+  margin-left: -1px;
+}
+
+.author-name {
+  font-size: var(--fs-6);
+  margin-block-end: 30px;
+}
+
+.whyunselling .section-text { font-size: unset; }
+
+@media (max-width: 575px) {
+  #author {
+    background-color: rgba(0, 0, 0, 0.4); /* Slightly darker for better readability */
+    padding: 20px;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+  }
+
+  .author .container {
+    display: flex;
+    flex-direction: column; /* Stack elements vertically */
+    gap: 15px;
+    max-width: 100%; /* Ensure container doesn't exceed viewport width */
+    margin: 0 auto; /* Center align content */
+  }
+
+  .author-banner {
+    display: flex;
+    
+    justify-content: center; /* Center the image */
+    width: 100%;
+    max-width: 90%; /* Slightly reduce width */
+  }
+
+  #author img {
+    width: 100%; /* Make the image responsive */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 15px;
+    max-width: 70%; /* Ensure the image scales proportionally */
+  }
+
+  .author-content {
+    padding: 20px;
+    margin-inline-start: 0;
+    margin-block-start: 20px;
+    background-color: rgba(0, 0, 0, 0.8); /* Ensure card matches background */
+    max-width: 100%; /* Reduce width to fit within the screen */
+    margin: 0 auto; /* Center align the content */
+  }
+
+  #author-content .section-title {
+    font-size: 1.8rem;
+    text-align: center;
+    line-height: 1.4;
+  }
+
+  #author-content .section-text {
+    font-size: 1rem;
+    line-height: 1.6;
+    word-wrap: break-word; /* Prevent text from overflowing */
+  }
+
+  .author-name {
+    font-size: 1rem;
+    text-align: center;
+  }
+}
+
+
+@media (min-width: 768px) {
+
+
+  .author .h2 { --fs-3: 4.2rem; }
+  
+}
+
+
+@media (min-width: 992px) {
+
+
+
+  .author .container {
+    grid-template-columns: 0.6fr 1fr;
+    gap: 0;
+  }
+
+  .author-content {
+    margin-block-start: 40px;
+    margin-inline-start: -30px;
+    padding-block-end: 70px;
+  }
+}
+
+@media (min-width: 1200px) {
+
+  .author-content { padding: 85px 60px 115px; }
+}

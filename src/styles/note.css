@@ -1,0 +1,198 @@
+#note {
+    background-color: rgba(0, 0, 0, 0.1);
+  }
+  
+  .author-notes-container {
+    display: flex;
+    background-color: #fff;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+  }
+  
+  #author-note {
+    display: flex;
+    background-color: #000;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+    width: 100%;
+    max-width: 900px;
+    margin-bottom: 30px; /* Add space below the content */
+  }
+  
+  .image-box {
+    width: 30%;
+    height: auto;
+    padding: 20px;
+  }
+  
+  .landscape-image {
+    width: 100%;
+    height: auto;
+    max-width: 300px; /* Limit the max width for large screens */
+    border-radius: 10px;
+    object-fit: cover;
+  }
+  
+  #note .text-box {
+    width: 100%; /* Text container width on larger screens */
+    padding: 20px;
+    color: #fff;
+    font-family: polygon;
+    background-color: rgba(0, 0, 0, 0.4);
+    border-radius: 20px;
+    text-align: justify; /* Apply justified text */
+  }
+  
+  .author-title {
+    font-size: 3em;
+    font-style: normal;
+    font-family: polygon;
+    font-weight: bold;
+    color: rgba(249, 199, 79);
+    text-align: justify; /* Apply justified text */
+  }
+  
+  .author-subtitle {
+    font-size: 1.2em;
+    padding-bottom: 19px;
+    font-style: italic;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: rgba(249, 199, 79);
+    text-align: justify; /* Apply justified text */
+  }
+  
+  .author-description {
+    font-family: polygon;
+    line-height: 1.6;
+    font-size: 1.7rem;
+    color: #fff;
+    text-align: justify; /* Apply justified text */
+  }
+  
+  .author-signature {
+    margin-top: 30px;
+    text-align: center;
+  }
+  
+  .author-signature .author-name {
+    color: rgba(249, 199, 79);
+    font-style: italic;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    text-align: justify; /* Apply justified text */
+  }
+  
+  .quote {
+    font-family: 'Times New Roman', Times, serif;
+    font-style: italic;
+    font-size: 1.2em;
+    text-align: justify; /* Apply justified text */
+  }
+  
+  .author-name {
+    font-family: 'Georgia', serif;
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #fff;
+    text-align: justify; /* Apply justified text */
+  }
+  
+  /* Responsive styles for smaller screens (mobile) */
+  @media (max-width: 479px) {
+    .author-notes-container {
+      padding: 10px;
+    }
+  
+    #author-note {
+      flex-direction: column; /* Stack items vertically */
+      align-items: center;
+    }
+  
+    .image-box {
+      width: 40%; /* Image takes full width */
+      padding: 5px;
+      margin-bottom: 10px; /* Space between image and text */
+    }
+  
+    .landscape-image {
+      max-width: 100%; /* Full width on small screens */
+      border-radius: 10px;
+    }
+  
+    .text-box {
+      width: 100%; /* Text container takes full width */
+      padding: 10px;
+      font-size: 0.9em;
+      text-align: justify; /* Ensure justified text */
+    }
+  
+    .author-title {
+      font-size: 1.5em;
+    }
+  
+    .author-subtitle {
+      font-size: 1em;
+    }
+  
+    .author-description {
+      hyphens: auto;
+      text-align: justify; /* Justifies the text */
+      text-justify: inter-word; /* Reduces uneven spacing */
+      font-size: 1.7rem; /* Proportionate increase */
+      font-style: normal;
+      color: #fff; /* Fixed invalid color syntax */
+      font-family: polygon;
+      word-spacing: 0rem; /* Optional: Adjust word spacing */
+      line-height: 1.5; /* Improves readability */
+    }
+  
+    .quote {
+      font-size: 0.9em;
+    }
+  
+    .author-name {
+      font-size: 1em;
+    }
+  }
+  
+  .authors-slogan {
+    text-align: justify;
+    margin: 10px;
+  }
+  
+  .quotes {
+    font-family: 'Playfair Display', serif; /* Elegant and classic font */
+    font-size: 1.5rem;
+    font-style: italic;
+    font-weight: 500;
+    color: #ffb400; /* Darker gray for better visibility */
+    margin: 0;
+    line-height: 1.5;
+    text-align: justify; /* Apply justified text */
+  }
+  
+  @media (min-width: 480px) {
+    .quotes {
+      font-size: 1.5rem;
+    }
+  }
+  
+  @media (min-width: 768px) {
+    .quotes {
+      font-size: 1.7rem;
+    }
+  }
+  
+  @media (min-width: 1024px) {
+    .quotes {
+      font-size: 1.9rem;
+    }
+  }
+  
+  @media (min-width: 1440px) {
+    .quotes {
+      font-size: 2rem;
+    }
+  }
+  
