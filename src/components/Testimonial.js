@@ -1,54 +1,57 @@
-import React, { useState, useEffect } from 'react';
-
+import React, { useState, useEffect } from "react";
+import { getFirestore, collection, getDocs } from "firebase/firestore";
 
 const Testimonials = () => {
+  const [readerOpinions, setReaderOpinions] = useState([]);
   const [currentSlide, setCurrentSlide] = useState(0);
+  const db = getFirestore();
 
-  const testimonials = [
-    {
-      quote: "This book changed the way I approach sales! Rajesh’s insights on customer-centricity have helped me close more deals with ease. Highly recommended for anyone in sales.",
-      author: "— Vin V., B2B Sales Head",
-    },
-    {
-      quote: "Start Unselling Now! offers a fresh perspective on sales. The emphasis on helping the customer buy instead of selling to them resonated with me deeply.",
-      author: "— Vicky M., Business Owner",
-    },
-    {
-      quote: "Rajesh’s approach is revolutionary. The techniques in this book helped me build authentic connections with clients, leading to stronger relationships and referrals.",
-      author: "— Marina B., Enterpreneur",
-    },
-    {
-      quote: "A must-read for anyone looking to up their sales game. Rajesh’s principles have transformed the way I interact with customers.",
-      author: "— Jafar J., Sales Consultant",
-    },
-  ];
+  useEffect(() => {
+    const fetchReaderOpinions = async () => {
+      try {
+        const snapshot = await getDocs(collection(db, "readerOpinions"));
+        const data = snapshot.docs.map((doc) => doc.data());
+        setReaderOpinions(data);
+      } catch (error) {
+        console.error("Error fetching reader opinions: ", error);
+      }
+    };
+
+    fetchReaderOpinions();
+  }, []);
 
   // Function to handle slide changes
   const changeSlide = (direction) => {
-    const newSlide = (currentSlide + direction + testimonials.length) % testimonials.length;
+    const newSlide = (currentSlide + direction + readerOpinions.length) % readerOpinions.length;
     setCurrentSlide(newSlide);
   };
 
-  // Auto-carousel logic
+  // Auto-carousel logic with updated speed (2 seconds interval)
   useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentSlide((prevSlide) => (prevSlide + 1) % testimonials.length);
-    }, 2000); // Change slide every 5 seconds
+    if (readerOpinions.length > 0) {
+      const interval = setInterval(() => {
+        setCurrentSlide((prevSlide) => (prevSlide + 1) % readerOpinions.length);
+      }, 2000); // Change slide every 2 seconds for faster carousel
 
-    return () => clearInterval(interval); // Cleanup interval on component unmount
-  }, [testimonials.length]);
+      return () => clearInterval(interval); // Cleanup interval on component unmount
+    }
+  }, [readerOpinions]);
+
+  if (readerOpinions.length === 0) {
+    return <p>Loading reader opinions...</p>;
+  }
 
   return (
-    <section className="testimonials" id='testimonials'>
+    <section className="testimonials" id="testimonials">
       <h2>What Readers Are Saying</h2>
       <div className="testimonial-carousel">
-        {testimonials.map((testimonial, index) => (
+        {readerOpinions.map((opinion, index) => (
           <div
             key={index}
-            className={`testimonial-slide ${index === currentSlide ? 'active' : ''}`}
+            className={`testimonial-slide ${index === currentSlide ? "active" : ""}`}
           >
-            <p className="testimonial-quote">"{testimonial.quote}"</p>
-            <p className="testimonial-author">{testimonial.author}</p>
+            <p className="testimonial-quote">"{opinion.quote}"</p>
+            <p className="testimonial-author">— {opinion.author}</p> {/* Added the static "—" here */}
           </div>
         ))}
       </div>

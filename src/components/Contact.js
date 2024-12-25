@@ -1,5 +1,7 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import emailjs from "emailjs-com";
+import { db } from "../firebase"; // Ensure this points to your firebase.js
+import { collection, getDocs } from "firebase/firestore";
 import "../styles/style.css";
 import Header2 from "./Header2";
 
@@ -15,6 +17,22 @@ const Contact = () => {
   const [isSending, setIsSending] = useState(false);
   const [error, setError] = useState(null);
   const [showPopup, setShowPopup] = useState(false);
+  const [socialMedia, setSocialMedia] = useState([]); // State to store social media data
+
+  useEffect(() => {
+    // Fetch social media data from Firestore
+    const fetchSocialMedia = async () => {
+      try {
+        const querySnapshot = await getDocs(collection(db, "socialMedia"));
+        const socialData = querySnapshot.docs.map((doc) => doc.data());
+        setSocialMedia(socialData);
+      } catch (error) {
+        console.error("Error fetching social media data: ", error);
+      }
+    };
+
+    fetchSocialMedia();
+  }, []);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -39,10 +57,10 @@ const Contact = () => {
     try {
       // Send email to Rajesh Grover
       await emailjs.send(
-        "service_ytvtbrj", // Service ID (EmailJS service)
-        "template_n6ucvch", // Template ID for contacting Rajesh
+        "service_s3nozkk", // Service ID (EmailJS service)
+        "template_ueme0q7", // Template ID for contacting Rajesh
         templateParams,
-        "-T3smZVfSZAUcBqWs" // User ID from EmailJS
+        "jMv0sNxzzSMIDvmjP" // User ID from EmailJS
       );
 
       // Send confirmation email to the user
@@ -52,10 +70,10 @@ const Contact = () => {
       };
 
       await emailjs.send(
-        "service_ytvtbrj",
-        "template_8muvr0h", // Template ID for confirmation email
+        "service_s3nozkk",
+        "template_5ph60h7", // Template ID for confirmation email
         confirmationParams,
-        "-T3smZVfSZAUcBqWs"
+        "jMv0sNxzzSMIDvmjP"
       );
 
       setIsSubmitted(true); // Show thank you message after successful email send
@@ -78,10 +96,10 @@ const Contact = () => {
         <Header2 />
       </div>
       <div className="container">
-        <h2 className="h2 section-title has-underline">
+        <h1 className="h2 section-title has-underline">
           Contact Rajesh Grover
           <span className="span has-before"></span>
-        </h2>
+        </h1>
         <p className="section-subtitle">
           Rajesh is a renowned sales strategist and a sought-after speaker
           worldwide. For inquiries, feedback, speaking engagements,
@@ -153,27 +171,13 @@ const Contact = () => {
             <li>
               <p className="social-list-title h3">Connect on socials</p>
               <ul className="social-list">
-                <li>
-                  <a href="#" className="social-link">
-                    <ion-icon name="logo-facebook"></ion-icon>
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="social-link">
-                    <ion-icon name="logo-twitter"></ion-icon>
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="social-link">
-                    <ion-icon name="logo-linkedin"></ion-icon>
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="social-link">
-                    <ion-icon name="logo-instagram"></ion-icon>
-                  </a>
-                </li>
-              
+                {socialMedia.map((social, index) => (
+                  <li key={index} className="social-item">
+                    <a href={social.link} className="social-link" target="_blank" rel="noopener noreferrer">
+                      <img src={social.icon} alt={social.name} className="social-icon" />
+                    </a>
+                  </li>
+                ))}
               </ul>
             </li>
           </ul>

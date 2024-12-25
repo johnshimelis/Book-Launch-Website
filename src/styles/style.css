@@ -457,7 +457,244 @@ color: #f9c74f;
   background-color: #e0484d;
 }
 
+.social-icon {
+  width: 34px;  /* Set a smaller size for the icons */
+  height: 34px;  /* Set the height to match the width */
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
 
+.social-link:hover .social-icon {
+  transform: scale(1.1);  /* Optional: Adds a hover effect for a slight zoom on hover */
+}
+/* General Styling for buttons */
+.popup-buttons {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+/* Ensuring buttons are next to each other */
+.popup-buttons button {
+  flex: 1;
+  min-width: 45%; /* Ensures they don't overlap */
+}
+
+/* Style for event image */
+.event-image {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 20px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .popup-buttons {
+    flex-direction: column; /* Stack buttons vertically on smaller screens */
+  }
+
+  .popup-buttons button {
+    width: 100%; /* Make buttons full width */
+  }
+}
+
+.responsive-image {
+  width: 50%;  /* Adjust this value as needed (e.g., 60% of the container's width) */
+  height: auto;
+  margin-bottom: 20px; /* Optional, adds space below the image */
+  max-width: 400px; /* Optional, sets a maximum width for the image */
+  display: block; /* Ensures the image is displayed as a block element */
+  margin-left: auto;
+  margin-right: auto; /* Centers the image */
+}
+/* Default popup styling */
+.popup-content {
+  max-height: 80vh; /* Limit height for viewport */
+  overflow: hidden;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.popup-content {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.scrollable {
+  max-height: 80%;
+  overflow-y: auto;
+}
+
+
+/* Scrollable popup for multiple events */
+.scrollable-popup {
+  overflow-y: auto; /* Vertical scrolling */
+  padding-right: 10px; /* Prevent scrollbar overlap */
+}
+.scrollable-popup {
+  max-height: 80vh;
+  overflow-y: auto;
+}
+
+.wider-popup {
+  width: 600px;
+  max-width: 90%;
+}
+/* General Popup Overlay Styling */
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+/* Popup Content */
+.popup-content {
+  background: #fff;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  max-width: 90%;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Wide Popup (adjusted for mobile) */
+.popup-content.wide {
+  max-width: 95%;
+  width: 100%;
+}
+#join h1{
+  font-size: 3.5rem;
+}
+
+#contact h1{
+  font-size: 3.5rem;
+}
+#join #scrollable .event-banner {
+  height: 32vh;
+}
+/* Scrollable Content */
+.popup-content.scrollable {
+  margin-top: 120px;
+  max-height: 80vh;
+  overflow-y: auto;
+}
+
+/* Buttons in Popup */
+ .popup-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.popup-buttons .btn {
+  width: 100%;
+}
+
+/* Input Fields */
+.input-field {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+/* General Section Styling */
+.section.contact {
+  padding: 20px;
+  text-align: center;
+}
+
+.container {
+  width: 100%;
+  margin: 0 auto;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.h2.section-title {
+  font-size: 20px;
+}
+
+.section-subtitle {
+  font-size: 14px;
+}
+
+/* Form Styling */
+.contact-form {
+  max-width: 100%;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.contact-form .btn {
+  width: 100%;
+  font-size: 14px;
+  padding: 10px;
+}
+
+/* Event Items */
+.event-item {
+  margin-bottom: 20px;
+}
+
+/* Event Banner Images */
+.event-banner img {
+  max-width:70%;
+  height: auto;
+  border-radius: 8px;
+}
+
+
+
+
+
+
+
+
+/* Media Queries */
+@media (min-width: 1024px) {
+  .button-container .get-copy-btn {
+    width: 280px;
+  }
+  .button-container{
+    margin-left: -10px;
+  }
+}
+
+@media (min-width: 1430px) {
+  .button-container {
+    margin-left: -140px;
+   
+  }
+}
 /* Media Queries */
 @media (max-width: 1024px) {
   .hero .container {
@@ -566,6 +803,59 @@ color: #f9c74f;
 }
 
 /* Button Container */
+/* Add this to your existing stylesheet (e.g., hero.css or similar) */
+.button-container {
+  display: flex;
+  gap: 20px; /* Space between buttons */
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.get-copy-btn {
+  background-color: #2a9d8f; /* Kindle-themed green */
+  color: white;
+  padding: 15px 30px;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 200px;
+}
+
+.get-copy-btn:hover {
+  background-color: #21867a; /* Slightly darker green on hover */
+  transform: scale(1.05);
+}
+
+/* New class for yellow button */
+.button-container .yellow-btn {
+  color: #000;
+  background-color: #ffeb3b; /* Yellow background */
+}
+
+.yellow-btn:hover {
+  background-color: #fbc02d; /* Darker yellow on hover */
+  transform: scale(1.05);
+}
+
+/* Optional: Responsive Design */
+@media (max-width: 768px) {
+  .button-container {
+    flex-direction: column;
+    align-items: center;
+  }
+  .get-copy-btn {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+}
+
+
 .button-container {
   grid-area: button-container;
   text-align: left;
@@ -580,6 +870,7 @@ color: #f9c74f;
   font-size: 16px;
   font-weight: bold;
   border-radius: 8px;
+  width: 50%;
   cursor: pointer;
   transition: transform 0.2s ease-in-out;
 }
@@ -835,20 +1126,119 @@ color: #f9c74f;
     text-align: center;
   }
 }
+
+/* Styling for the Join Now button */
+.join-event-btn {
+  background-color: #4CAF50; /* Green background */
+  color: white;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.join-event-btn:hover {
+  background-color: #45a049; /* Slightly darker green */
+  transform: translateY(-2px); /* Hover effect - slight lift */
+}
+
+.join-event-btn:focus {
+  outline: none;
+  box-shadow: 0 0 10px rgba(72, 198, 72, 0.8); /* Green glow on focus */
+}
+
+/* Styling for the Cancel button */
+.cancel-event-btn {
+  background-color: #f44336; /* Red background */
+  color: white;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.cancel-event-btn:hover {
+  background-color: #e53935; /* Slightly darker red */
+  transform: translateY(-2px); /* Hover effect - slight lift */
+}
+
+.cancel-event-btn:focus {
+  outline: none;
+  box-shadow: 0 0 10px rgba(255, 72, 72, 0.8); /* Red glow on focus */
+}
+
+/* Add some margin to space the buttons apart */
+.event-buttons {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  padding-top: 20px;
+}
+
 /* Max-width: 480px (Small Mobile) */
 @media (max-width: 480px) {
-  
+  #join #scrollable{
+    margin-top: -40vh;
+    height: 35vh;
+  }
   #join .popup-content {
-    height: 120px;
+    height: 2000px;
     max-width: 95%;
     padding: 1rem;
     border-radius: 6px; /* Smoother corners for small screens */
   }
-
+  #join #scrollable  h2{
+    font-size: 2.5rem;
+  }
+  #join #scrollable .event-item h3{
+    font-size: 2rem;
+    margin-top:-30px;
+  
+  }
+  #join #scrollable .event-item .texts{
+    margin-top: 150px;
+  }
+  #join #scrollable .event-item .texts p{
+    font-size: 1.5rem;
+    margin-bottom: 0px;
+  }
  .popup-overlay h3 {
     font-size: 3rem;
     margin-bottom: 0.75rem;
   }
+  #join #scrollable .popup-buttons{
+    margin-top: -30px;
+  }
+  #join #reigster-scroll {
+    max-width: 85%;
+    margin-top: -460px;
+    height: 35vh;
+  }
+  #join #reigster-scroll h3{
+    font-size: 2.5rem;
+  }
+
+  #join #thankyou{
+    max-width: 85%;
+    margin-top: 100px;
+    height: 20vh;
+  }
+  #join #thankyou h3{ 
+    margin-top: 7px;
+    font-size: 2rem;
+  }
+  #join  #thankyou .btn{
+    margin-top: 20px;
+    margin-left: 4rem;
+    font-size: 1.5rem;
+    background-color: #e0484d;
+    
+  }
+
 
   #join .popup-content p {
     font-size: 10rem;
@@ -955,6 +1345,7 @@ color: #f9c74f;
     overflow: hidden; /* Hides overflow text */
     text-overflow: ellipsis; /* Adds ellipsis if title is too long */
     padding-bottom: 8px;
+    margin-top: 24px;
     color: #C13636;
   }
   
@@ -1059,9 +1450,14 @@ margin-top: -120px;
   padding-bottom: 80px;
 }
 
+#join .section-subtitle {
+  margin-top: -40px;
+}
 
 #contact .wrapper .contact-card{
   padding-bottom: -200px;
+  margin-left: 0px;
+  padding-left: 100px;
   
 }
 #contact .wrapper .contact-card .social-list-title{
@@ -1070,8 +1466,11 @@ margin-top: -120px;
 #contact .wrapper .contact-card{
   padding-top: 200px;
 }
-
+#contact .social-list{
+  margin-left: -65px;
+}
   #contact .section-subtitle {
+    margin-top: 0px;
     text-transform: lowercase; /* Make all text lowercase */
     color:#fff;
     font-style: normal;
@@ -1153,6 +1552,7 @@ margin-top: -120px;
 }
 
 .get-copy-btn {
+  width: 45%;
   margin-top: -1.3em;
   margin-left: 1.2em;
   font-size: 18px;
@@ -1191,6 +1591,10 @@ margin-top: -120px;
 
 }
 @media (min-width: 2058px){
+  .button-container {
+    margin-left: -350px;
+   
+  }
   .cards-grid {
     padding-right: 20px;
     width: 70%;
@@ -1209,6 +1613,9 @@ margin-top: -120px;
 }
 
 @media (min-width: 2370px){
+  .button-container{
+    margin-left: -540px;
+  }
   .cards-grid {
     padding-right: 20px;
     width: 60%;
@@ -1810,8 +2217,14 @@ textarea.input-field {
 }
 
 .contact-form .btn { margin-inline: auto; }
-
+#contact-card  .card-title {
+  margin-left: -320px;
+}
+#contact-card  .card-link {
+  margin-left: -220px;
+}
 .contact-card {
+  margin-left: -20px;
   background-color: var(--seashell);
   padding: 30px;
 }
@@ -1825,6 +2238,7 @@ textarea.input-field {
   color:#000;
 }
 #contact-card .social-list-title{
+  margin-left: -230px;
   font-family: polygon;
   color: #000;
 }

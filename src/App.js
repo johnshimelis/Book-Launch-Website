@@ -8,7 +8,7 @@ import Availability from './components/Availability';
 import WhyUnselling from './components/WhyUnseling';
 import Chapters from './components/Chapters';
 import ChapterPreview from './components/ChapterPreview';
-import Pricing from './components/Pricing';
+
 import Author from './components/Author';
 import Join from './components/Join';
 import AuthorNote from './components/AuthorNote';

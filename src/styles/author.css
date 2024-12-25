@@ -250,7 +250,7 @@ body {
   .author-banner .responsive-image {
    
    border-radius: 50%;
-   margin-top: 60px;
+   margin-top: 100px;
     max-width: 250px; /* Slight increase in image size */
   }
 
@@ -294,6 +294,7 @@ body {
     gap: 10rem; /* Further increase gap for large screens */
   }
   .author-banner .responsive-image {
+    margin-left: 230px;
     margin-top: 60px;
     max-width: 300px; /* Slight increase in image size */
   }
@@ -325,6 +326,7 @@ body {
 
   .author-banner .responsive-image {
     max-width: 400px; /* Increase image size */
+    margin-left: 330px;
   }
 
   .author-banner {
@@ -366,8 +368,9 @@ body {
     gap: 45rem; /* Large gap for 4K screens */
   }
  .author-banner .responsive-image {
-  margin-top: 100px;
-    max-width: 700px; /* Larger image on 4K screens */
+  margin-top: 70px;
+  margin-left: 630px;
+    max-width: 400px; /* Larger image on 4K screens */
   }
 
   .author-banner {
@@ -436,4 +439,18 @@ body {
     font-size: 2.2rem;
     text-transform: none; /* Ensure no other transformations */
   }
+}
+.section-paragraph {
+  margin-bottom: 20px; /* Add space between paragraphs */
+  line-height: 1.6;
+  font-size: 1.8rem;
+  color: #fff;
+  line-height: 28.8px;
+  font-weight: 400;
+  font-family: polygon;
+  text-align: justify;
+}
+
+.section-paragraph:last-child {
+  margin-bottom: 0; /* Remove margin from the last paragraph */
 }

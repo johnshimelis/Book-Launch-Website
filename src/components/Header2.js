@@ -19,26 +19,10 @@ const Header = () => {
   const closeNavbar = () => setNavbarActive(false);
 
   const navItems = [
-    { name: "Author's Note", path: '/author-note', id: 'author-note' },
-    { name: 'Contact', path: '/contact', id: 'contact' },
-    { name: 'Join Unselling Community', path: '/join', id: 'join-academy' },
+    { name: "Author's Note", path: '/author-note' },
+    { name: 'Contact', path: '/contact' },
+    { name: 'Join Unselling Community', path: '/join' },
   ];
-
-  const handleNavClick = (event, id) => {
-    event.preventDefault();
-    closeNavbar();
-
-    const targetElement = document.getElementById(id);
-    const offset = document.querySelector('header').offsetHeight; // Dynamically use header height
-
-    if (targetElement) {
-      const elementPosition = targetElement.offsetTop - offset; // Calculate position based on header height
-      window.scrollTo({
-        top: elementPosition,
-        behavior: 'smooth', // Smooth scroll
-      });
-    }
-  };
 
   return (
     <header id='navbar' className={`header ${isHeaderActive ? 'active' : ''}`} data-header>
@@ -51,25 +35,38 @@ const Header = () => {
           <ul className="navbar-list">
             {navItems.map((item, index) => (
               <li className="navbar-item" key={index}>
-                {item.path ? (
-                  <Link
-                    to={item.path}
-                    className="navbar-link"
-                    onClick={closeNavbar}
-                  >
-                    {item.name}
-                  </Link>
-                ) : (
-                  <a
-                    href={`#${item.id}`}
-                    className="navbar-link"
-                    onClick={(event) => handleNavClick(event, item.id)}
-                  >
-                    {item.name}
-                  </a>
-                )}
+                {/* Check if the item has a valid path */}
+                <Link
+                  to={item.path}
+                  className="navbar-link"
+                  onClick={closeNavbar} // Close the navbar when a link is clicked
+                >
+                  {item.name}
+                </Link>
               </li>
             ))}
+            {/* For smooth scroll to sections */}
+            {/* For example, if you need to scroll to an element on the same page */}
+            <li className="navbar-item">
+              <a
+                href="#some-section"
+                className="navbar-link"
+                onClick={(event) => {
+                  event.preventDefault();
+                  const targetElement = document.getElementById('some-section');
+                  if (targetElement) {
+                    const offset = document.querySelector('header').offsetHeight;
+                    const elementPosition = targetElement.offsetTop - offset;
+                    window.scrollTo({
+                      top: elementPosition,
+                      behavior: 'smooth', // Smooth scroll behavior
+                    });
+                  }
+                }}
+              >
+
+              </a>
+            </li>
           </ul>
         </nav>
 

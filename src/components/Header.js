@@ -47,7 +47,7 @@ const Header = () => {
       const elementPosition = targetElement.offsetTop - offset;
       window.scrollTo({
         top: elementPosition,
-        behavior: 'smooth',
+        behavior: 'smooth', // Smooth scroll
       });
     }
   };

@@ -8,7 +8,7 @@
 }
 
 #availability p {
-  padding-bottom: 0px;
+  padding-bottom: 30px;
   font-size: 3.5rem; 
     line-height: 5.6rem;
   font-weight: bold;
@@ -42,7 +42,7 @@
 
 .retailer-links a img {
   padding-bottom: 60px;
-  max-width: 60%;
+  max-width: 45%;
  
   height: auto;
   margin: 0 auto;
@@ -88,8 +88,8 @@
   }
 
   #availability .retailer-links li a img {
-    margin-left: -40px;
-    width: 170px; /* Make logos smaller on small screens */
+    margin-left: -5px;
+    width: 220px; /* Make logos smaller on small screens */
   }
 }
 
@@ -128,7 +128,7 @@
     margin: 20px auto;
   }
 
-  .retailer-links {
+  #availability .retailer-links {
     flex-direction: row;
     gap: 30px; /* Increased space on medium screens */
   }
